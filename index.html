@@ -5,7 +5,6 @@
 
   <meta charset="UTF-8" />
 
-  <!-- Responsive -->
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
@@ -13,17 +12,28 @@
 
   <title>Bảo trì website</title>
 
-  <!-- Favicon PNG -->
+  <!-- =========================
+       FAVICON
+  ========================== -->
+
+  <!-- PNG favicon -->
   <link
     rel="icon"
     type="image/png"
-    href="./icon.png"
+    sizes="512x512"
+    href="./favicon.png?v=3"
   />
 
-  <!-- iPhone / Apple -->
+  <!-- Apple -->
   <link
     rel="apple-touch-icon"
-    href="./icon.png"
+    href="./favicon.png?v=3"
+  />
+
+  <!-- Theme color -->
+  <meta
+    name="theme-color"
+    content="#ffffff"
   />
 
   <style>
@@ -62,7 +72,7 @@
       display:block;
 
       /*
-        contain để KHÔNG mất nội dung
+        Không crop nội dung
       */
 
       object-fit:contain;
@@ -138,13 +148,23 @@
 
         object-fit:contain;
 
-        /*
-          Mobile đẹp hơn khi top
-        */
-
         object-position:center top;
 
       }
+
+    }
+
+    /* =========================
+       Chống blur ảnh
+    ========================== */
+
+    img{
+
+      image-rendering:auto;
+
+      backface-visibility:hidden;
+
+      transform:translateZ(0);
 
     }
 
