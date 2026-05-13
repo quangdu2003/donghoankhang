@@ -2,43 +2,91 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
+
+  <!-- Responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="./icon.jpg" />
+
   <title>Bảo trì website</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
     html,
-    body {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background: #000;
+    body{
+      width:100%;
+      height:100%;
+      background:#000;
+      overflow:hidden;
+      font-family:Arial, sans-serif;
     }
 
-    .maintenance-banner {
-      width: 100%;
-      height: 100vh;
-      background-image: url('./banner.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+    .maintenance-banner{
+      width:100%;
+      height:100vh;
+
+      /* Desktop */
+      background-image:url('../banner.jpg');
+
+      background-repeat:no-repeat;
+
+      /* Quan trọng */
+      background-size:contain;
+      background-position:center center;
+
+      background-color:#ffffff;
+    }
+
+    /* Desktop màn hình lớn */
+    @media screen and (min-width:1200px){
+      .maintenance-banner{
+        background-size:cover;
+      }
+    }
+
+    /* Tablet */
+    @media screen and (max-width:1024px){
+      .maintenance-banner{
+        background-size:contain;
+      }
     }
 
     /* Mobile */
-    @media screen and (max-width: 768px) {
-      .maintenance-banner {
-        background-image: url('./banner_m.jpg');
+    @media screen and (max-width:768px){
+
+      .maintenance-banner{
+
+        background-image:url('../banner_m.jpg');
+
+        /* Fit mobile đẹp hơn */
+        background-size:contain;
+
+        background-position:center top;
+
+        background-color:#ffffff;
       }
     }
+
+    /* Mobile nhỏ */
+    @media screen and (max-width:480px){
+
+      .maintenance-banner{
+        background-size:100% auto;
+      }
+    }
+
   </style>
 </head>
 
 <body>
+
   <div class="maintenance-banner"></div>
+
 </body>
 </html>
