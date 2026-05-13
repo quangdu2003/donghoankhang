@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Bảo trì website</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="./icon.jpg" />
+  <link rel="icon" type="image/jpeg" href="./icon.jpg">
 
   <style>
 
@@ -22,57 +21,43 @@
       width:100%;
       height:100%;
       overflow:hidden;
-      font-family:Arial, sans-serif;
+      background:#fff;
+      font-family:Arial,sans-serif;
+    }
+
+    .wrapper{
+      width:100%;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
       background:#fff;
     }
 
-    .maintenance-banner{
+    .banner-desktop,
+    .banner-mobile{
       width:100%;
       height:100vh;
 
-      /* Desktop banner */
-      background-image:url('./banner.jpg');
+      object-fit:contain;
 
-      background-repeat:no-repeat;
-
-      /* FULL màn hình */
-      background-size:cover;
-
-      background-position:center center;
-
-      background-color:#ffffff;
+      display:block;
     }
 
-    /* Tablet */
-    @media screen and (max-width:1024px){
-
-      .maintenance-banner{
-        background-position:center center;
-      }
-
+    /* Desktop */
+    .banner-mobile{
+      display:none;
     }
 
     /* Mobile */
     @media screen and (max-width:768px){
 
-      .maintenance-banner{
-
-        /* Banner mobile */
-        background-image:url('./banner_m.jpg');
-
-        background-size:cover;
-
-        background-position:center center;
-
+      .banner-desktop{
+        display:none;
       }
 
-    }
-
-    /* Mobile nhỏ */
-    @media screen and (max-width:480px){
-
-      .maintenance-banner{
-        background-position:center top;
+      .banner-mobile{
+        display:block;
       }
 
     }
@@ -82,7 +67,23 @@
 
 <body>
 
-  <div class="maintenance-banner"></div>
+  <div class="wrapper">
+
+    <!-- Desktop -->
+    <img
+      src="./banner.jpg"
+      alt="Maintenance"
+      class="banner-desktop"
+    >
+
+    <!-- Mobile -->
+    <img
+      src="./banner_m.jpg"
+      alt="Maintenance Mobile"
+      class="banner-mobile"
+    >
+
+  </div>
 
 </body>
 </html>
