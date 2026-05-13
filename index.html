@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bảo trì website</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .maintenance-banner {
+      width: 100%;
+      height: 100vh;
+      background-image: url('../banner.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Mobile */
+    @media screen and (max-width: 768px) {
+      .maintenance-banner {
+        background-image: url('../banner_m.jpg');
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="maintenance-banner"></div>
+</body>
+</html>
