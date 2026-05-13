@@ -4,7 +4,6 @@
 
   <meta charset="UTF-8" />
 
-  <!-- Responsive -->
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
@@ -12,7 +11,6 @@
 
   <title>Bảo trì website</title>
 
-  <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="./icon.jpg" />
 
   <style>
@@ -33,24 +31,30 @@
     }
 
     body{
-      display:flex;
-      justify-content:center;
-      align-items:center;
+      position:relative;
     }
 
-    /* ===== Banner chung ===== */
+    /* =========================
+       Banner chung
+    ========================== */
 
     .banner{
-      position:fixed;
+      position:absolute;
       inset:0;
 
-      width:100vw;
-      height:100vh;
-
-      object-fit:cover;
-      object-position:center center;
+      width:100%;
+      height:100%;
 
       display:block;
+
+      object-fit:contain;
+
+      /*
+        QUAN TRỌNG:
+        contain sẽ KHÔNG crop nội dung
+      */
+
+      object-position:center center;
 
       user-select:none;
       pointer-events:none;
@@ -60,7 +64,10 @@
       background:#fff;
     }
 
-    /* ===== Desktop ===== */
+    /* =========================
+       Desktop
+       1672 x 941
+    ========================== */
 
     .desktop-banner{
       display:block;
@@ -70,42 +77,37 @@
       display:none;
     }
 
-    /*
-      Desktop chuẩn:
-      1920 x 1080
-      Tỷ lệ 16:9
-    */
-
     @media screen and (min-width:769px){
 
       .desktop-banner{
 
         /*
-          Giữ đúng tỷ lệ desktop
-          và fit đẹp mọi màn hình
+          KHÔNG crop
+          luôn hiện full nội dung
         */
 
-        object-fit:cover;
+        object-fit:contain;
 
         /*
-          Có thể chỉnh:
-          center top
-          center center
-          center bottom
+          Căn giữa đẹp
         */
 
         object-position:center center;
+
+        /*
+          Tối ưu ảnh desktop
+        */
+
+        width:100vw;
+        height:100vh;
       }
 
     }
 
-    /* ===== Mobile ===== */
-
-    /*
-      Mobile chuẩn:
-      1080 x 1920
-      Tỷ lệ 9:16
-    */
+    /* =========================
+       Mobile
+       941 x 1672
+    ========================== */
 
     @media screen and (max-width:768px){
 
@@ -116,18 +118,37 @@
       .mobile-banner{
         display:block;
 
-        object-fit:cover;
+        /*
+          Không crop mobile
+        */
+
+        object-fit:contain;
 
         /*
-          Mobile thường đẹp hơn khi top
+          Mobile đẹp hơn khi top
         */
 
         object-position:center top;
+
+        width:100vw;
+        height:100vh;
       }
 
     }
 
-    /* ===== iPhone Safe Area ===== */
+    /* =========================
+       Chống blur ảnh
+    ========================== */
+
+    img{
+      image-rendering:auto;
+      backface-visibility:hidden;
+      transform:translate3d(0,0,0);
+    }
+
+    /* =========================
+       iPhone safe area
+    ========================== */
 
     @supports (padding:max(0px)){
 
@@ -141,14 +162,6 @@
 
     }
 
-    /* ===== Chống zoom ảnh mờ ===== */
-
-    img{
-      image-rendering:auto;
-      backface-visibility:hidden;
-      transform:translateZ(0);
-    }
-
   </style>
 
 </head>
@@ -156,23 +169,25 @@
 <body>
 
   <!-- ========================= -->
-  <!-- Desktop 1920x1080 16:9 -->
+  <!-- Desktop -->
+  <!-- 1672 x 941 -->
   <!-- ========================= -->
 
   <img
     src="./banner.jpg"
-    alt="Maintenance Desktop"
+    alt="Desktop Banner"
     class="banner desktop-banner"
     draggable="false"
   />
 
   <!-- ========================= -->
-  <!-- Mobile 1080x1920 9:16 -->
+  <!-- Mobile -->
+  <!-- 941 x 1672 -->
   <!-- ========================= -->
 
   <img
     src="./banner_m.jpg"
-    alt="Maintenance Mobile"
+    alt="Mobile Banner"
     class="banner mobile-banner"
     draggable="false"
   />
