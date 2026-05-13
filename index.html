@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
 
   <meta charset="UTF-8" />
 
+  <!-- Responsive -->
   <meta
     name="viewport"
     content="width=device-width, initial-scale=1.0, viewport-fit=cover"
@@ -11,7 +13,18 @@
 
   <title>Bảo trì website</title>
 
-  <link rel="icon" type="image/jpeg" href="./icon.jpg" />
+  <!-- Favicon PNG -->
+  <link
+    rel="icon"
+    type="image/png"
+    href="./icon.png"
+  />
+
+  <!-- iPhone / Apple -->
+  <link
+    rel="apple-touch-icon"
+    href="./icon.png"
+  />
 
   <style>
 
@@ -39,29 +52,36 @@
     ========================== */
 
     .banner{
+
       position:absolute;
       inset:0;
 
-      width:100%;
-      height:100%;
+      width:100vw;
+      height:100vh;
 
       display:block;
 
-      object-fit:contain;
-
       /*
-        QUAN TRỌNG:
-        contain sẽ KHÔNG crop nội dung
+        contain để KHÔNG mất nội dung
       */
 
+      object-fit:contain;
+
       object-position:center center;
+
+      background:#ffffff;
 
       user-select:none;
       pointer-events:none;
 
       -webkit-user-drag:none;
 
-      background:#fff;
+      image-rendering:auto;
+
+      backface-visibility:hidden;
+
+      transform:translate3d(0,0,0);
+
     }
 
     /* =========================
@@ -81,25 +101,19 @@
 
       .desktop-banner{
 
-        /*
-          KHÔNG crop
-          luôn hiện full nội dung
-        */
-
-        object-fit:contain;
-
-        /*
-          Căn giữa đẹp
-        */
-
-        object-position:center center;
-
-        /*
-          Tối ưu ảnh desktop
-        */
+        display:block;
 
         width:100vw;
         height:100vh;
+
+        object-fit:contain;
+
+        object-position:center center;
+
+      }
+
+      .mobile-banner{
+        display:none;
       }
 
     }
@@ -116,11 +130,11 @@
       }
 
       .mobile-banner{
+
         display:block;
 
-        /*
-          Không crop mobile
-        */
+        width:100vw;
+        height:100vh;
 
         object-fit:contain;
 
@@ -130,24 +144,12 @@
 
         object-position:center top;
 
-        width:100vw;
-        height:100vh;
       }
 
     }
 
     /* =========================
-       Chống blur ảnh
-    ========================== */
-
-    img{
-      image-rendering:auto;
-      backface-visibility:hidden;
-      transform:translate3d(0,0,0);
-    }
-
-    /* =========================
-       iPhone safe area
+       iPhone Safe Area
     ========================== */
 
     @supports (padding:max(0px)){
@@ -169,28 +171,29 @@
 <body>
 
   <!-- ========================= -->
-  <!-- Desktop -->
+  <!-- Desktop Banner -->
   <!-- 1672 x 941 -->
   <!-- ========================= -->
 
   <img
     src="./banner.jpg"
-    alt="Desktop Banner"
+    alt="Maintenance Desktop"
     class="banner desktop-banner"
     draggable="false"
   />
 
   <!-- ========================= -->
-  <!-- Mobile -->
+  <!-- Mobile Banner -->
   <!-- 941 x 1672 -->
   <!-- ========================= -->
 
   <img
     src="./banner_m.jpg"
-    alt="Mobile Banner"
+    alt="Maintenance Mobile"
     class="banner mobile-banner"
     draggable="false"
   />
 
 </body>
+
 </html>
