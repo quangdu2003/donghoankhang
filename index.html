@@ -13,7 +13,7 @@
   <title>Bảo trì website</title>
 
   <!-- =========================
-       FAVICON
+       FAVICON FIX
   ========================== -->
 
   <!-- PNG favicon -->
@@ -21,16 +21,22 @@
     rel="icon"
     type="image/png"
     sizes="512x512"
-    href="./favicon.png?v=3"
+    href="./favicon.png?v=5"
+  />
+
+  <!-- Shortcut icon -->
+  <link
+    rel="shortcut icon"
+    href="./favicon.png?v=5"
   />
 
   <!-- Apple -->
   <link
     rel="apple-touch-icon"
-    href="./favicon.png?v=3"
+    href="./favicon.png?v=5"
   />
 
-  <!-- Theme color -->
+  <!-- Theme -->
   <meta
     name="theme-color"
     content="#ffffff"
@@ -63,23 +69,13 @@
 
     .banner{
 
-      position:absolute;
+      position:fixed;
       inset:0;
 
       width:100vw;
       height:100vh;
 
       display:block;
-
-      /*
-        Không crop nội dung
-      */
-
-      object-fit:contain;
-
-      object-position:center center;
-
-      background:#ffffff;
 
       user-select:none;
       pointer-events:none;
@@ -90,17 +86,25 @@
 
       backface-visibility:hidden;
 
-      transform:translate3d(0,0,0);
+      transform:translateZ(0);
+
+      background:#ffffff;
 
     }
 
     /* =========================
-       Desktop
+       DESKTOP
        1672 x 941
     ========================== */
 
     .desktop-banner{
+
       display:block;
+
+      object-fit:contain;
+
+      object-position:center center;
+
     }
 
     .mobile-banner{
@@ -110,16 +114,7 @@
     @media screen and (min-width:769px){
 
       .desktop-banner{
-
         display:block;
-
-        width:100vw;
-        height:100vh;
-
-        object-fit:contain;
-
-        object-position:center center;
-
       }
 
       .mobile-banner{
@@ -129,8 +124,8 @@
     }
 
     /* =========================
-       Mobile
-       941 x 1672
+       MOBILE
+       1080 x 1920
     ========================== */
 
     @media screen and (max-width:768px){
@@ -143,28 +138,26 @@
 
         display:block;
 
+        /*
+          FULL màn hình mobile
+        */
+
         width:100vw;
         height:100vh;
 
-        object-fit:contain;
+        /*
+          Fit đẹp mọi thiết bị
+        */
+
+        object-fit:cover;
+
+        /*
+          Focus phần trên
+        */
 
         object-position:center top;
 
       }
-
-    }
-
-    /* =========================
-       Chống blur ảnh
-    ========================== */
-
-    img{
-
-      image-rendering:auto;
-
-      backface-visibility:hidden;
-
-      transform:translateZ(0);
 
     }
 
@@ -204,7 +197,7 @@
 
   <!-- ========================= -->
   <!-- Mobile Banner -->
-  <!-- 941 x 1672 -->
+  <!-- 1080 x 1920 -->
   <!-- ========================= -->
 
   <img
