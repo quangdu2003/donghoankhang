@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
 
   <meta charset="UTF-8" />
@@ -13,28 +12,28 @@
   <title>Bảo trì website</title>
 
   <!-- =========================
-       FAVICON FIX
+       FAVICON
   ========================== -->
 
-  <!-- Browser favicon -->
+  <!-- Browser -->
   <link
     rel="icon"
     type="image/png"
     sizes="32x32"
-    href="/favicon-32x32.png?v=20"
+    href="./icon.png?v=1"
   />
 
   <!-- Shortcut -->
   <link
     rel="shortcut icon"
-    href="/favicon-32x32.png?v=20"
+    href="./icon.png?v=1"
   />
 
   <!-- Apple -->
   <link
     rel="apple-touch-icon"
     sizes="180x180"
-    href="/favicon.png?v=20"
+    href="./icon.png?v=1"
   />
 
   <!-- Android -->
@@ -42,10 +41,9 @@
     rel="icon"
     type="image/png"
     sizes="512x512"
-    href="/favicon.png?v=20"
+    href="./icon.png?v=1"
   />
 
-  <!-- Theme -->
   <meta
     name="theme-color"
     content="#ffffff"
@@ -84,8 +82,6 @@
       width:100vw;
       height:100vh;
 
-      display:block;
-
       user-select:none;
       pointer-events:none;
 
@@ -103,7 +99,6 @@
 
     /* =========================
        DESKTOP
-       1672 x 941
     ========================== */
 
     .desktop-banner{
@@ -111,7 +106,6 @@
       display:block;
 
       object-fit:contain;
-
       object-position:center center;
 
     }
@@ -134,7 +128,7 @@
 
     /* =========================
        MOBILE
-       1080 x 1920
+       Fit giống desktop
     ========================== */
 
     @media screen and (max-width:768px){
@@ -151,16 +145,17 @@
         height:100vh;
 
         /*
-          Fit đẹp mobile
+          Giống desktop:
+          hiện full ảnh không crop
         */
-
-        object-fit:cover;
+        object-fit:contain;
 
         /*
-          Focus phần trên
+          căn giữa
         */
+        object-position:center center;
 
-        object-position:center top;
+        background:#ffffff;
 
       }
 
@@ -188,10 +183,7 @@
 
 <body>
 
-  <!-- ========================= -->
   <!-- Desktop Banner -->
-  <!-- 1672 x 941 -->
-  <!-- ========================= -->
 
   <img
     src="./banner.jpg"
@@ -200,10 +192,7 @@
     draggable="false"
   />
 
-  <!-- ========================= -->
   <!-- Mobile Banner -->
-  <!-- 1080 x 1920 -->
-  <!-- ========================= -->
 
   <img
     src="./banner_m.jpg"
@@ -213,5 +202,4 @@
   />
 
 </body>
-
 </html>
